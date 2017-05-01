@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HomeViewController.h
 //  LocationReminders
 //
 //  Created by Luay Younus on 5/1/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface HomeViewController : UIViewController
 
 
 @end

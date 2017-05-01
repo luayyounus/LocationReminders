@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,9 +25,23 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f9q-uE-a0L">
                                 <rect key="frame" x="56" y="99.5" width="262.5" height="467"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7I-k8-V1C">
+                                <rect key="frame" x="276.5" y="574" width="42" height="30"/>
+                                <state key="normal" title="Canlis"/>
+                                <connections>
+                                    <action selector="canlisLocationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nq2-wX-P6L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDo-Ds-vqs">
+                                <rect key="frame" x="56" y="574" width="30" height="30"/>
+                                <state key="normal" title="CF"/>
+                                <connections>
+                                    <action selector="codeFellowsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="na3-Gw-c7F"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-iO-i18">
-                                <rect key="frame" x="152" y="574.5" width="70" height="30"/>
-                                <state key="normal" title="Location 1"/>
+                                <rect key="frame" x="131" y="574" width="113" height="30"/>
+                                <state key="normal" title="Espresso Vivace"/>
                                 <connections>
                                     <action selector="location1Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SC1-fY-QyF"/>
                                 </connections>
@@ -35,11 +49,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7Hl-iO-i18" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1bs-uR-ouJ"/>
+                            <constraint firstItem="O7I-k8-V1C" firstAttribute="trailing" secondItem="f9q-uE-a0L" secondAttribute="trailing" id="3tw-fe-yrP"/>
                             <constraint firstItem="f9q-uE-a0L" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="ZFJ-Ja-rcU"/>
+                            <constraint firstItem="TDo-Ds-vqs" firstAttribute="leading" secondItem="f9q-uE-a0L" secondAttribute="leading" id="cpT-ub-I9D"/>
+                            <constraint firstItem="TDo-Ds-vqs" firstAttribute="top" secondItem="f9q-uE-a0L" secondAttribute="bottom" constant="8" id="cyP-dF-ZqT"/>
+                            <constraint firstItem="7Hl-iO-i18" firstAttribute="top" secondItem="f9q-uE-a0L" secondAttribute="bottom" constant="8" id="e9L-SD-yWd"/>
                             <constraint firstItem="f9q-uE-a0L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fsL-CT-SHy"/>
-                            <constraint firstItem="7Hl-iO-i18" firstAttribute="top" secondItem="f9q-uE-a0L" secondAttribute="bottom" constant="8" id="jS5-0E-lIN"/>
+                            <constraint firstItem="O7I-k8-V1C" firstAttribute="top" secondItem="f9q-uE-a0L" secondAttribute="bottom" constant="8" id="lpd-TF-oZq"/>
                             <constraint firstItem="f9q-uE-a0L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="n4A-4G-xtr"/>
+                            <constraint firstItem="7Hl-iO-i18" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ov8-gu-POa"/>
                             <constraint firstItem="f9q-uE-a0L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uGC-gx-U6s"/>
                         </constraints>
                     </view>

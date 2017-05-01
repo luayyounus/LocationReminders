@@ -8,7 +8,13 @@
 
 #import "ViewController.h"
 
+@import Parse;
+@import MapKit;
+
 @interface ViewController ()
+
+@property(weak, nonatomic) IBOutlet MKMapView *mapView;
+@property(strong,nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -16,7 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self requestPermission];
+    self.mapView.showsUserLocation = YES;
+}
+
+-(void)requestPermission{
+    self.locationManager = [[CLLocationManager alloc]init];
+    [self.locationManager requestAlwaysAuthorization];
 }
 
 
@@ -25,5 +37,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)location1Pressed:(id)sender {
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6566674, -122.351096);
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
+    
+    [self.mapView setRegion:region animated:YES];
+}
 
 @end

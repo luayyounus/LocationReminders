@@ -164,4 +164,6 @@ playground.xcworkspace
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+UnusedCode
+
 # End of https://www.gitignore.io/api/macos,swift,xcode,carthage,objective-c

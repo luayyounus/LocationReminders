@@ -13,42 +13,23 @@
 
 @interface ViewController ()
 
+@property(weak, nonatomic) IBOutlet MKMapView *mapView;
+@property(strong,nonatomic) CLLocationManager *locationManager;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-    //Create an object class on Heroku Dashboard (Server)
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    
-    testObject[@"testName"] = @"Adam Wallraff";
-    
-    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (succeeded) {
-            NSLog(@"Success saving test object!");
-        } else {
-            NSLog(@"There was a problem saving. Save Error: %@", error.localizedDescription);
-        }
-    }];
-    
-    
-    //Make a Query to that same object
-    PFQuery *query = [PFQuery queryWithClassName:@"TestObject"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (error){
-            NSLog(@"%@", error.localizedDescription);
-        } else {
-            NSLog(@"Query Results %@", objects);
-        }
-    }];
+    [self requestPermission];
+    self.mapView.showsUserLocation = YES;
 }
 
-
+-(void)requestPermission{
+    self.locationManager = [[CLLocationManager alloc]init];
+    [self.locationManager requestAlwaysAuthorization];
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -56,5 +37,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)location1Pressed:(id)sender {
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6566674, -122.351096);
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
+    
+    [self.mapView setRegion:region animated:YES];
+}
 
 @end

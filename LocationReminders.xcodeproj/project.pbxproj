@@ -18,7 +18,6 @@
 		010DEFDB1EB7B32200B78F94 /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 010DEFD61EB7B2E400B78F94 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		010DEFDC1EB7B32200B78F94 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 010DEFD71EB7B2E400B78F94 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		010DEFDE1EB7C0C800B78F94 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010DEFDD1EB7C0C800B78F94 /* MapKit.framework */; };
-		010DEFE01EB7C77800B78F94 /* UnusedCode in Resources */ = {isa = PBXBuildFile; fileRef = 010DEFDF1EB7C77800B78F94 /* UnusedCode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,7 +48,6 @@
 		010DEFD61EB7B2E400B78F94 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		010DEFD71EB7B2E400B78F94 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		010DEFDD1EB7C0C800B78F94 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		010DEFDF1EB7C77800B78F94 /* UnusedCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnusedCode; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,14 +84,8 @@
 		010DEFBD1EB7AC2300B78F94 /* LocationReminders */ = {
 			isa = PBXGroup;
 			children = (
-				010DEFC11EB7AC2300B78F94 /* AppDelegate.h */,
-				010DEFC21EB7AC2300B78F94 /* AppDelegate.m */,
-				010DEFC41EB7AC2300B78F94 /* HomeViewController.h */,
-				010DEFC51EB7AC2300B78F94 /* HomeViewController.m */,
-				010DEFDF1EB7C77800B78F94 /* UnusedCode */,
-				010DEFC71EB7AC2300B78F94 /* Main.storyboard */,
-				010DEFCA1EB7AC2300B78F94 /* Assets.xcassets */,
-				010DEFCC1EB7AC2300B78F94 /* LaunchScreen.storyboard */,
+				01355B1D1EB7EBB4004EB23B /* Controllers */,
+				01355B1E1EB7EBC8004EB23B /* Views */,
 				010DEFCF1EB7AC2300B78F94 /* Info.plist */,
 				010DEFBE1EB7AC2300B78F94 /* Supporting Files */,
 			);
@@ -116,6 +108,27 @@
 				010DEFD71EB7B2E400B78F94 /* Parse.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		01355B1D1EB7EBB4004EB23B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				010DEFC11EB7AC2300B78F94 /* AppDelegate.h */,
+				010DEFC21EB7AC2300B78F94 /* AppDelegate.m */,
+				010DEFC41EB7AC2300B78F94 /* HomeViewController.h */,
+				010DEFC51EB7AC2300B78F94 /* HomeViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		01355B1E1EB7EBC8004EB23B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				010DEFC71EB7AC2300B78F94 /* Main.storyboard */,
+				010DEFCA1EB7AC2300B78F94 /* Assets.xcassets */,
+				010DEFCC1EB7AC2300B78F94 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +196,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				010DEFE01EB7C77800B78F94 /* UnusedCode in Resources */,
 				010DEFCE1EB7AC2300B78F94 /* LaunchScreen.storyboard in Resources */,
 				010DEFCB1EB7AC2300B78F94 /* Assets.xcassets in Resources */,
 				010DEFC91EB7AC2300B78F94 /* Main.storyboard in Resources */,

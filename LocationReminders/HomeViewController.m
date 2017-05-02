@@ -11,7 +11,7 @@
 @import Parse;
 @import MapKit;
 
-@interface HomeViewController ()
+@interface HomeViewController ()<CLLocationManagerDelegate>
 
 @property(weak, nonatomic) IBOutlet MKMapView *mapView;
 @property(strong,nonatomic) CLLocationManager *locationManager;
@@ -28,13 +28,13 @@
 
 -(void)requestPermission{
     self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = 100; //meters
+    
+    self.locationManager.delegate = self;
+    
     [self.locationManager requestAlwaysAuthorization];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.locationManager startUpdatingLocation];
 }
 
 - (IBAction)location1Pressed:(id)sender {
@@ -60,5 +60,16 @@
     [self.mapView setRegion:region animated:YES];
 }
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation *location = locations.lastObject;
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 500.0, 500.0);
+    
+    [self.mapView setRegion:region animated:YES];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSLog(@"The location is not accurate");
+}
 
 @end

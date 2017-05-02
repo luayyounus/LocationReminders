@@ -8,11 +8,12 @@
 
 #import "HomeViewController.h"
 #import "AddReminderViewController.h"
+#import "LocationController.h"
 
 @import Parse;
 @import MapKit;
 
-@interface HomeViewController ()<CLLocationManagerDelegate,MKMapViewDelegate>
+@interface HomeViewController()<LocationControllerDelegate,MKMapViewDelegate>
 
 @property(weak, nonatomic) IBOutlet MKMapView *mapView;
 @property(strong,nonatomic) CLLocationManager *locationManager;
@@ -23,20 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestPermission];
+    [[LocationController shared] requestPermission];
     self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
-}
-
--(void)requestPermission{
-    self.locationManager = [[CLLocationManager alloc]init];
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    self.locationManager.distanceFilter = 100; //meters
-    
-    self.locationManager.delegate = self;
-    
-    [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager startUpdatingLocation];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -94,14 +84,6 @@
 }
 
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
-    CLLocation *location = locations.lastObject;
-    
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 500.0, 500.0);
-    
-    [self.mapView setRegion:region animated:YES];
-}
-
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     if ([annotation isKindOfClass: [MKUserLocation class]]) {
         return nil;
@@ -129,8 +111,11 @@
     [self performSegueWithIdentifier:@"AddReminderViewController" sender:view];
 }
 
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    NSLog(@"The location is not accurate");
+- (void)locationControllerUpdatedLocation:(CLLocation *)location{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 500.0, 500.0);
+    
+    [self.mapView setRegion:region animated:YES];
 }
+
 
 @end

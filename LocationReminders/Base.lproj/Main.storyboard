@@ -35,6 +35,7 @@
                                 <state key="normal" title="My Locations"/>
                                 <connections>
                                     <action selector="locationsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="as4-eE-SwA"/>
+                                    <segue destination="zqd-Ur-b3B" kind="presentation" id="SBd-y8-4nB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,6 +63,44 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1076" y="102.99850074962519"/>
+        </scene>
+        <!--Location Presets View Controller-->
+        <scene sceneID="mJY-7o-wdG">
+            <objects>
+                <viewController id="zqd-Ur-b3B" customClass="LocationPresetsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9s3-uJ-Xfv"/>
+                        <viewControllerLayoutGuide type="bottom" id="3HS-Zf-c2o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lis-yV-cpE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5OM-LN-zOn">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hSS-1J-S7j">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hSS-1J-S7j" id="G97-Oz-m8b">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="5OM-LN-zOn" id="13r-a9-10G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujW-0n-8hO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="796.55172413793105"/>
         </scene>
         <!--Add Reminder View Controller-->
         <scene sceneID="KHf-TK-qhO">

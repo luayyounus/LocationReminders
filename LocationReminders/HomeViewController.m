@@ -98,6 +98,7 @@
     
     annotationView.canShowCallout = YES;
     annotationView.animatesDrop = YES;
+    [self randomPinColor:annotationView];
     
     UIButton *rightCalloutAccessory = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
@@ -115,6 +116,17 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 500.0, 500.0);
     
     [self.mapView setRegion:region animated:YES];
+}
+
+
+#pragma mark - Random Color for Pin
+
+-(void)randomPinColor:(MKPinAnnotationView *)annotationView{
+    CGFloat red = arc4random() % 255/255.0;
+    CGFloat green = arc4random() % 255/255.0;
+    CGFloat blue = arc4random() % 255/255.0;
+    UIColor *randomPinColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    annotationView.pinTintColor = randomPinColor;
 }
 
 

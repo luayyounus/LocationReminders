@@ -44,27 +44,24 @@
 }
 
 
-- (IBAction)location1Pressed:(id)sender {
+- (IBAction)locationsButtonPressed:(id)sender {
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6566674, -122.351096);
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
     
     [self.mapView setRegion:region animated:YES];
-}
-- (IBAction)codeFellowsPressed:(id)sender {
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6182169,-122.3529265);
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
+    MKPointAnnotation *pinLoc = [[MKPointAnnotation alloc]init];
     
-    [self.mapView setRegion:region animated:YES];
+    if (self.mapView.annotations.count > 0) {
+        [self.mapView removeAnnotations:self.mapView.annotations];
+    }
+
+    pinLoc.coordinate = coordinate;
+    [self.mapView addAnnotation:pinLoc];
     
-}
-- (IBAction)canlisLocationPressed:(id)sender {
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6430933,-122.3489422);
+
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.);
-    
-    [self.mapView setRegion:region animated:YES];
 }
 
 - (IBAction)userLongPressed:(UILongPressGestureRecognizer *)sender {
@@ -78,9 +75,11 @@
         newPoint.coordinate = coordinate;
         newPoint.title = @"New Location";
         
+        if (self.mapView.annotations.count > 0) {
+            [self.mapView removeAnnotations:self.mapView.annotations];
+        }
         [self.mapView addAnnotation:newPoint];
     }
-    
 }
 
 
@@ -118,9 +117,7 @@
     [self.mapView setRegion:region animated:YES];
 }
 
-
 #pragma mark - Random Color for Pin
-
 -(void)randomPinColor:(MKPinAnnotationView *)annotationView{
     CGFloat red = arc4random() % 255/255.0;
     CGFloat green = arc4random() % 255/255.0;

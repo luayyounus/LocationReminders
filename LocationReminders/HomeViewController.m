@@ -12,11 +12,11 @@
 
 @import Parse;
 @import MapKit;
+@import ParseUI;
 
-@interface HomeViewController()<LocationControllerDelegate,MKMapViewDelegate>
+@interface HomeViewController()<LocationControllerDelegate,MKMapViewDelegate,PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 @property(weak, nonatomic) IBOutlet MKMapView *mapView;
-@property(strong,nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -25,8 +25,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[LocationController shared] requestPermission];
+    [LocationController shared].delegate = self;
     self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reminderSavedToParse:) name:@"ReminderSavedToParse" object:nil];
+    
+    [PFUser logOut];
+    
+    if (![PFUser currentUser]) {
+        PFLogInViewController *loginViewController = [[PFLogInViewController alloc]init];
+        
+        loginViewController.delegate = self;
+        loginViewController.signUpController.delegate = self;
+        
+        loginViewController.fields = PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton | PFLogInFieldsUsernameAndPassword;
+        
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    }
+}
+
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)reminderSavedToParse:(id)sender{
+    NSLog(@"Do some stuff since our new reminder was saved!");
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -40,9 +68,22 @@
         newReminderViewController.coordinate = annotationView.annotation.coordinate;
         newReminderViewController.annotationTitle = annotationView.annotation.title;
         newReminderViewController.title = annotationView.annotation.title;
+        
+        __weak typeof(self) bruce = self;
+        
+        newReminderViewController.completion = ^(MKCircle *circle){
+            __strong typeof (bruce) hulk = bruce;
+            
+            [hulk.mapView removeAnnotation:annotationView.annotation];
+            [hulk.mapView addOverlay:circle];
+        };
     }
 }
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"ReminderSavedToParse" object:nil];
+    
+}
 
 - (IBAction)locationsButtonPressed:(id)sender {
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6566674, -122.351096);
@@ -59,8 +100,6 @@
 
     pinLoc.coordinate = coordinate;
     [self.mapView addAnnotation:pinLoc];
-    
-
     
 }
 
@@ -111,11 +150,23 @@
     [self performSegueWithIdentifier:@"AddReminderViewController" sender:view];
 }
 
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    MKCircleRenderer *renderer = [[MKCircleRenderer alloc]initWithCircle:overlay];
+    
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.fillColor = [UIColor redColor];
+    renderer.alpha = 0.25;
+    
+    return renderer;
+}
+
 - (void)locationControllerUpdatedLocation:(CLLocation *)location{
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 500.0, 500.0);
     
     [self.mapView setRegion:region animated:YES];
 }
+
+
 
 #pragma mark - Random Color for Pin
 -(void)randomPinColor:(MKPinAnnotationView *)annotationView{
@@ -125,6 +176,5 @@
     UIColor *randomPinColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
     annotationView.pinTintColor = randomPinColor;
 }
-
 
 @end

@@ -20,6 +20,7 @@
 		010DEFDE1EB7C0C800B78F94 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010DEFDD1EB7C0C800B78F94 /* MapKit.framework */; };
 		011041F81EB942BD00F241A7 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011041F71EB942BD00F241A7 /* LocationController.m */; };
 		0129F4391EB8FF00001EC43B /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0129F4381EB8FF00001EC43B /* AddReminderViewController.m */; };
+		01365B431EB9AF890089154B /* LocationPresetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01365B421EB9AF890089154B /* LocationPresetsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +55,8 @@
 		011041F71EB942BD00F241A7 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
 		0129F4371EB8FF00001EC43B /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReminderViewController.h; sourceTree = "<group>"; };
 		0129F4381EB8FF00001EC43B /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
+		01365B411EB9AF890089154B /* LocationPresetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPresetsViewController.h; sourceTree = "<group>"; };
+		01365B421EB9AF890089154B /* LocationPresetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPresetsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				010DEFC21EB7AC2300B78F94 /* AppDelegate.m */,
 				010DEFC41EB7AC2300B78F94 /* HomeViewController.h */,
 				010DEFC51EB7AC2300B78F94 /* HomeViewController.m */,
+				01365B411EB9AF890089154B /* LocationPresetsViewController.h */,
+				01365B421EB9AF890089154B /* LocationPresetsViewController.m */,
 				0129F4371EB8FF00001EC43B /* AddReminderViewController.h */,
 				0129F4381EB8FF00001EC43B /* AddReminderViewController.m */,
 				011041F61EB942BD00F241A7 /* LocationController.h */,
@@ -223,6 +228,7 @@
 				0129F4391EB8FF00001EC43B /* AddReminderViewController.m in Sources */,
 				010DEFC61EB7AC2300B78F94 /* HomeViewController.m in Sources */,
 				010DEFC31EB7AC2300B78F94 /* AppDelegate.m in Sources */,
+				01365B431EB9AF890089154B /* LocationPresetsViewController.m in Sources */,
 				010DEFC01EB7AC2300B78F94 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

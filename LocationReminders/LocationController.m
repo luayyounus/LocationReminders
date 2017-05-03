@@ -41,11 +41,5 @@
     [self.delegate locationControllerUpdatedLocation:location];
 }
 
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    NSLog(@"The location is not accurate");
-}
-
-
-
 
 @end

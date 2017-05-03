@@ -19,9 +19,15 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *location;
+
+@property(strong,nonatomic) NSMutableArray *allLocations;
 @property (weak, nonatomic) id delegate;
 
 +(instancetype)shared;
 -(void)requestPermission;
+//
+//-(void)addLocation:(CLLocation *)location
+//         forName:(NSString *)locationName
+//      withRadius:(NSNumber *)radius;
 
 @end

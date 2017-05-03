@@ -28,6 +28,12 @@
     
     self.locationName = self.locationNameTextField.text;
     self.locationRadius = (NSNumber *)self.radiusTextField.text;
+    
+    //drawing a single line
+    UIView *LineView=[[UIView alloc]initWithFrame:CGRectMake(0, 130 , self.view.frame.size.width, 2)];
+    [LineView setBackgroundColor:[UIColor blackColor]];
+    [self.view addSubview:LineView];
+    
 }
 
 

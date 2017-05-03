@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,36 +93,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMy-gt-5e6">
-                                <rect key="frame" x="105" y="238" width="164" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMy-gt-5e6">
+                                <rect key="frame" x="158" y="168" width="201" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="hFb-aZ-dPn"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5g-jk-75D">
-                                <rect key="frame" x="105" y="318" width="164" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5g-jk-75D">
+                                <rect key="frame" x="161" y="224" width="198" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQB-MD-HfJ">
-                                <rect key="frame" x="161" y="289" width="52" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-na-a4Z">
+                                <rect key="frame" x="30" y="173" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Radius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQB-MD-HfJ">
+                                <rect key="frame" x="26" y="229" width="127" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-na-a4Z">
-                                <rect key="frame" x="130" y="209" width="115" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmA-xb-RVH">
+                                <rect key="frame" x="112" y="87" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="G5T-rX-cp4"/>
+                                    <constraint firstAttribute="width" constant="150" id="nqy-qy-oCF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QmA-xb-RVH" firstAttribute="centerX" secondItem="Z51-S5-9GZ" secondAttribute="centerX" id="0Ez-lw-sFV"/>
+                            <constraint firstItem="wMy-gt-5e6" firstAttribute="centerY" secondItem="MhT-na-a4Z" secondAttribute="centerY" id="BoO-E2-8Jk"/>
+                            <constraint firstItem="wMy-gt-5e6" firstAttribute="leading" secondItem="J5g-jk-75D" secondAttribute="leading" constant="-3" id="Ngw-G4-av9"/>
+                            <constraint firstItem="wMy-gt-5e6" firstAttribute="trailing" secondItem="Z51-S5-9GZ" secondAttribute="trailingMargin" id="PBb-Dl-dnT"/>
+                            <constraint firstItem="J5g-jk-75D" firstAttribute="top" secondItem="wMy-gt-5e6" secondAttribute="bottom" constant="26" id="RzS-LY-VIK"/>
+                            <constraint firstItem="QmA-xb-RVH" firstAttribute="top" secondItem="vU0-tH-7TT" secondAttribute="bottom" constant="23" id="XNf-m3-7co"/>
+                            <constraint firstItem="wMy-gt-5e6" firstAttribute="leading" secondItem="MhT-na-a4Z" secondAttribute="trailing" constant="8" id="fEZ-UJ-EMA"/>
+                            <constraint firstItem="wMy-gt-5e6" firstAttribute="top" secondItem="QmA-xb-RVH" secondAttribute="bottom" constant="60" id="hIA-wg-JG4"/>
+                            <constraint firstItem="wMy-gt-5e6" firstAttribute="trailing" secondItem="J5g-jk-75D" secondAttribute="trailing" id="qkv-TZ-Hde"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="locationNameTextField" destination="wMy-gt-5e6" id="cXN-Ya-QIP"/>

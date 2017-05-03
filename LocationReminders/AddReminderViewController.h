@@ -15,7 +15,6 @@ typedef void(^NewReminderCreatedCompletion)(MKCircle *);
 
 @property(strong,nonatomic) NSString *annotationTitle;
 @property(nonatomic) CLLocationCoordinate2D coordinate;
-
 @property(strong,nonatomic) NewReminderCreatedCompletion completion;
 
 @end

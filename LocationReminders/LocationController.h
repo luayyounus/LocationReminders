@@ -25,9 +25,5 @@
 
 +(instancetype)shared;
 -(void)requestPermission;
-//
-//-(void)addLocation:(CLLocation *)location
-//         forName:(NSString *)locationName
-//      withRadius:(NSNumber *)radius;
 
 @end

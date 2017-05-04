@@ -7,7 +7,6 @@
 //
 
 #import "LocationController.h"
-#import "HomeViewController.h"
 
 @interface LocationController()<CLLocationManagerDelegate>
 

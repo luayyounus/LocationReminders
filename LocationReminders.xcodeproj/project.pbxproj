@@ -100,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				0129F43A1EB8FF11001EC43B /* Controllers */,
+				0143741B1EBBABF80080A369 /* Model */,
 				0129F43B1EB8FF4D001EC43B /* Views */,
 				010DEFCF1EB7AC2300B78F94 /* Info.plist */,
 				010DEFBE1EB7AC2300B78F94 /* Supporting Files */,
@@ -110,6 +111,8 @@
 		010DEFBE1EB7AC2300B78F94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				010DEFC11EB7AC2300B78F94 /* AppDelegate.h */,
+				010DEFC21EB7AC2300B78F94 /* AppDelegate.m */,
 				010DEFBF1EB7AC2300B78F94 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -131,16 +134,12 @@
 			children = (
 				010DEFC41EB7AC2300B78F94 /* HomeViewController.h */,
 				010DEFC51EB7AC2300B78F94 /* HomeViewController.m */,
-				011041F61EB942BD00F241A7 /* LocationController.h */,
-				011041F71EB942BD00F241A7 /* LocationController.m */,
 				017D763B1EBA467B006B7F48 /* Reminder.h */,
 				017D763C1EBA467B006B7F48 /* Reminder.m */,
 				0129F4371EB8FF00001EC43B /* AddReminderViewController.h */,
 				0129F4381EB8FF00001EC43B /* AddReminderViewController.m */,
 				01365B411EB9AF890089154B /* LocationPresetsViewController.h */,
 				01365B421EB9AF890089154B /* LocationPresetsViewController.m */,
-				010DEFC11EB7AC2300B78F94 /* AppDelegate.h */,
-				010DEFC21EB7AC2300B78F94 /* AppDelegate.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +152,15 @@
 				010DEFCC1EB7AC2300B78F94 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		0143741B1EBBABF80080A369 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				011041F61EB942BD00F241A7 /* LocationController.h */,
+				011041F71EB942BD00F241A7 /* LocationController.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -19,11 +19,11 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *location;
-
 @property(strong,nonatomic) NSMutableArray *allLocations;
 @property (weak, nonatomic) id delegate;
 
 +(instancetype)shared;
 -(void)requestPermission;
+-(void)startMonitoringForRegion:(CLRegion *)region;
 
 @end

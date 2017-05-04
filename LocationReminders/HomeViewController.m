@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "AddReminderViewController.h"
 #import "LocationController.h"
+#import "Reminder.h"
 
 @import Parse;
 @import MapKit;
@@ -91,7 +92,11 @@
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
-            NSLog(@"Query Objects %@", objects);
+            for (Reminder *reminder in objects) {
+                CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(reminder.location.latitude, reminder.location.longitude);
+                MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius:[reminder.reminderRadius doubleValue]];
+                [self.mapView addOverlay:circle];
+            }
         }
     }];
 }
@@ -156,17 +161,16 @@
     UIButton *rightCalloutAccessory = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     UIButton *leftCalloutAccessory = [UIButton buttonWithType:UIButtonTypeContactAdd];
     
-    [rightCalloutAccessory addTarget:self action:@selector(rightCalloutAccessoryClicked) forControlEvents:UIControlEventTouchDown];
-    [leftCalloutAccessory addTarget:self action:@selector(bookmarkingTheLocation:) forControlEvents:UIControlEventTouchDown];
-    
     annotationView.rightCalloutAccessoryView = rightCalloutAccessory;
     annotationView.leftCalloutAccessoryView = leftCalloutAccessory;
+    
     
     return annotationView;
 }
 
--(void)rightCalloutAccessoryClicked{
-    [self performSegueWithIdentifier:@"AddReminderViewController" sender:self.view];
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    [self performSegueWithIdentifier:@"AddReminderViewController" sender:view];
+
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{

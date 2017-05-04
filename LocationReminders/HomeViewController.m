@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "AddReminderViewController.h"
 #import "LocationController.h"
+#import "Reminder.h"
 
 @import Parse;
 @import MapKit;
@@ -91,7 +92,11 @@
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
-            NSLog(@"Query Objects %@", objects);
+            for (Reminder *reminder in objects) {
+                CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(reminder.location.latitude, reminder.location.longitude);
+                MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius:[reminder.reminderRadius doubleValue]];
+                [self.mapView addOverlay:circle];
+            }
         }
     }];
 }

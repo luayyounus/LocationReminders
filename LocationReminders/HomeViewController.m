@@ -156,17 +156,16 @@
     UIButton *rightCalloutAccessory = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     UIButton *leftCalloutAccessory = [UIButton buttonWithType:UIButtonTypeContactAdd];
     
-    [rightCalloutAccessory addTarget:self action:@selector(rightCalloutAccessoryClicked) forControlEvents:UIControlEventTouchDown];
-    [leftCalloutAccessory addTarget:self action:@selector(bookmarkingTheLocation:) forControlEvents:UIControlEventTouchDown];
-    
     annotationView.rightCalloutAccessoryView = rightCalloutAccessory;
     annotationView.leftCalloutAccessoryView = leftCalloutAccessory;
+    
     
     return annotationView;
 }
 
--(void)rightCalloutAccessoryClicked{
-    [self performSegueWithIdentifier:@"AddReminderViewController" sender:self.view];
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    [self performSegueWithIdentifier:@"AddReminderViewController" sender:view];
+
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{

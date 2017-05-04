@@ -39,7 +39,7 @@
         loginViewController.delegate = self;
         loginViewController.signUpController.delegate = self;
         
-        loginViewController.fields = PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton | PFLogInFieldsUsernameAndPassword;
+        loginViewController.fields = PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton | PFLogInFieldsUsernameAndPassword | PFLogInFieldsDismissButton;
         
         [self presentViewController:loginViewController animated:YES completion:nil];
     }
@@ -52,6 +52,11 @@
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self fetchQuery];
+}
+
 
 -(void)reminderSavedToParse:(id)sender{
     NSLog(@"Do some stuff since our new reminder was saved!");
@@ -80,9 +85,19 @@
     }
 }
 
+-(void)fetchQuery{
+    PFQuery *query = [PFQuery queryWithClassName:@"Reminder"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        } else {
+            NSLog(@"Query Objects %@", objects);
+        }
+    }];
+}
+
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"ReminderSavedToParse" object:nil];
-    
 }
 
 - (IBAction)locationsButtonPressed:(id)sender {
@@ -139,15 +154,19 @@
     [self randomPinColor:annotationView];
     
     UIButton *rightCalloutAccessory = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    UIButton *leftCalloutAccessory = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    
+    [rightCalloutAccessory addTarget:self action:@selector(rightCalloutAccessoryClicked) forControlEvents:UIControlEventTouchDown];
+    [leftCalloutAccessory addTarget:self action:@selector(bookmarkingTheLocation:) forControlEvents:UIControlEventTouchDown];
     
     annotationView.rightCalloutAccessoryView = rightCalloutAccessory;
+    annotationView.leftCalloutAccessoryView = leftCalloutAccessory;
     
     return annotationView;
 }
 
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    NSLog(@"Accessory tapped!");
-    [self performSegueWithIdentifier:@"AddReminderViewController" sender:view];
+-(void)rightCalloutAccessoryClicked{
+    [self performSegueWithIdentifier:@"AddReminderViewController" sender:self.view];
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
@@ -167,6 +186,13 @@
 }
 
 
+-(void)bookmarkingTheLocation:(CLLocation *)location{
+    if (!_bookmarkedLocations){
+        _bookmarkedLocations = [[NSMutableArray alloc]init];
+        
+    }
+
+}
 
 #pragma mark - Random Color for Pin
 -(void)randomPinColor:(MKPinAnnotationView *)annotationView{

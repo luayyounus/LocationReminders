@@ -17,8 +17,6 @@
 @property (weak, nonatomic) IBOutlet UISlider *radiusSlider;
 @property (weak, nonatomic) IBOutlet UIButton *saveLocationButtonPressed;
 
-
-
 @end
 
 @implementation AddReminderViewController
@@ -49,7 +47,6 @@
         
         [[NSNotificationCenter defaultCenter]postNotificationName:@"ReminderSavedToParse" object:nil];
         
-//        NSLog(@"Annotation Title: %@",self.annotationTitle);
         NSLog(@"Coordinates: %f,%f",self.coordinate.latitude,self.coordinate.longitude);
         
         if (self.completion) {
@@ -57,9 +54,7 @@
             self.completion(circle);
         }
     }];
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-    //    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

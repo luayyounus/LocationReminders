@@ -63,7 +63,6 @@
         <!--Location Presets View Controller-->
         <scene sceneID="mJY-7o-wdG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ujW-0n-8hO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="zqd-Ur-b3B" customClass="LocationPresetsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9s3-uJ-Xfv"/>
@@ -95,6 +94,7 @@
                         <outlet property="tableView" destination="5OM-LN-zOn" id="13r-a9-10G"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujW-0n-8hO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="839"/>
         </scene>
@@ -153,7 +153,7 @@
                                     <action selector="saveLocation:" destination="t6Z-K5-JFZ" eventType="touchUpInside" id="EwY-vs-djd"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="wgN-9H-YIf">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="10" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="wgN-9H-YIf">
                                 <rect key="frame" x="156" y="230" width="205" height="29"/>
                                 <color key="minimumTrackTintColor" red="1" green="0.4588416816" blue="0.4525879719" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" red="0.46237348410000001" green="0.6756622779" blue="0.47723855570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3L-qQ-esw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784.8" y="102.99850074962519"/>
+            <point key="canvasLocation" x="2092" y="103"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wj4-9T-QWv">

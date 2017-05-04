@@ -12,7 +12,7 @@
 
 @dynamic name;
 @dynamic location;
-@dynamic radius;
+@dynamic reminderRadius;
 
 +(void)load{
     [super load];

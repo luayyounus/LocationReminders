@@ -39,7 +39,8 @@
         
         loginViewController.delegate = self;
         loginViewController.signUpController.delegate = self;
-        
+        loginViewController.logInView.logo = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"LocationRemindersLogo.png"]];
+        [loginViewController.logInView.logo setContentMode:UIViewContentModeScaleAspectFit];
         loginViewController.fields = PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton | PFLogInFieldsUsernameAndPassword | PFLogInFieldsDismissButton;
         
         [self presentViewController:loginViewController animated:YES completion:nil];
@@ -132,7 +133,7 @@
         MKPointAnnotation *newPoint = [[MKPointAnnotation alloc]init];
         
         newPoint.coordinate = coordinate;
-        newPoint.title = @"New Location";
+        newPoint.title = @"New Reminder";
         
         if (self.mapView.annotations.count > 0) {
             [self.mapView removeAnnotations:self.mapView.annotations];

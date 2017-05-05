@@ -111,41 +111,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMy-gt-5e6">
-                                <rect key="frame" x="158" y="168" width="201" height="30"/>
+                                <rect key="frame" x="63" y="124" width="250" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="hFb-aZ-dPn"/>
+                                    <constraint firstAttribute="width" constant="250" id="MLs-Uz-kPM"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQB-MD-HfJ">
-                                <rect key="frame" x="16" y="228" width="133" height="33"/>
-                                <color key="backgroundColor" red="0.15560910633815936" green="0.31539498730964466" blue="0.18037692279345832" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="10" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="wgN-9H-YIf">
+                                <rect key="frame" x="60" y="184" width="254" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="cdR-Vq-aGq"/>
+                                    <constraint firstAttribute="width" constant="250" id="92l-UV-zHW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmA-xb-RVH">
-                                <rect key="frame" x="80" y="96" width="214" height="21"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.4588416816" blue="0.4525879719" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.46237348410000001" green="0.6756622779" blue="0.47723855570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="radiusSliderValueChanged:" destination="t6Z-K5-JFZ" eventType="valueChanged" id="E6y-ou-rtu"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Range" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ze6-9c-SCr">
+                                <rect key="frame" x="92" y="227" width="100" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="G5T-rX-cp4"/>
-                                    <constraint firstAttribute="width" constant="214" id="nqy-qy-oCF"/>
+                                    <constraint firstAttribute="width" constant="100" id="02G-rl-RiV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNH-9U-KNW">
+                                <rect key="frame" x="210" y="232" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="mXg-x9-9Vb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0C-uX-zIm">
-                                <rect key="frame" x="16" y="287" width="343" height="33"/>
-                                <color key="backgroundColor" red="0.15560910633815936" green="0.31539498730964466" blue="0.18037692279345832" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="96" y="294" width="182" height="46"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="C64-4u-pCb"/>
+                                    <constraint firstAttribute="height" constant="46" id="C64-4u-pCb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="25"/>
                                 <state key="normal" title="  Save Location  ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -153,43 +162,20 @@
                                     <action selector="saveLocation:" destination="t6Z-K5-JFZ" eventType="touchUpInside" id="EwY-vs-djd"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="10" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="wgN-9H-YIf">
-                                <rect key="frame" x="156" y="230" width="205" height="29"/>
-                                <color key="minimumTrackTintColor" red="1" green="0.4588416816" blue="0.4525879719" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="maximumTrackTintColor" red="0.46237348410000001" green="0.6756622779" blue="0.47723855570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="radiusSliderValueChanged:" destination="t6Z-K5-JFZ" eventType="valueChanged" id="E6y-ou-rtu"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Location Name  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-na-a4Z">
-                                <rect key="frame" x="16" y="167" width="133" height="33"/>
-                                <color key="backgroundColor" red="0.15560910633815936" green="0.31539498730964466" blue="0.18037692279345832" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="uI4-e0-4FU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.81681118470000003" green="0.82577556370000005" blue="0.71496066020000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QmA-xb-RVH" firstAttribute="centerX" secondItem="Z51-S5-9GZ" secondAttribute="centerX" id="0Ez-lw-sFV"/>
-                            <constraint firstItem="wMy-gt-5e6" firstAttribute="centerY" secondItem="MhT-na-a4Z" secondAttribute="centerY" id="BoO-E2-8Jk"/>
-                            <constraint firstItem="c0C-uX-zIm" firstAttribute="top" secondItem="bQB-MD-HfJ" secondAttribute="bottom" constant="26" id="HjP-rQ-app"/>
-                            <constraint firstItem="oo4-DL-Xme" firstAttribute="top" secondItem="c0C-uX-zIm" secondAttribute="bottom" constant="303" id="Igd-pg-bxc"/>
-                            <constraint firstItem="wMy-gt-5e6" firstAttribute="trailing" secondItem="Z51-S5-9GZ" secondAttribute="trailingMargin" id="PBb-Dl-dnT"/>
-                            <constraint firstItem="c0C-uX-zIm" firstAttribute="leading" secondItem="bQB-MD-HfJ" secondAttribute="leading" id="WUl-xR-cIg"/>
-                            <constraint firstItem="QmA-xb-RVH" firstAttribute="top" secondItem="vU0-tH-7TT" secondAttribute="bottom" constant="32" id="XNf-m3-7co"/>
-                            <constraint firstItem="c0C-uX-zIm" firstAttribute="trailing" secondItem="wMy-gt-5e6" secondAttribute="trailing" id="b9W-gC-vp2"/>
-                            <constraint firstItem="wMy-gt-5e6" firstAttribute="leading" secondItem="MhT-na-a4Z" secondAttribute="trailing" constant="9" id="fEZ-UJ-EMA"/>
-                            <constraint firstItem="c0C-uX-zIm" firstAttribute="trailing" secondItem="wgN-9H-YIf" secondAttribute="trailing" id="fe7-zo-nuI"/>
-                            <constraint firstItem="wgN-9H-YIf" firstAttribute="leading" secondItem="bQB-MD-HfJ" secondAttribute="trailing" constant="9" id="fz1-gf-5n8"/>
-                            <constraint firstItem="wMy-gt-5e6" firstAttribute="top" secondItem="QmA-xb-RVH" secondAttribute="bottom" constant="51" id="hIA-wg-JG4"/>
-                            <constraint firstItem="wgN-9H-YIf" firstAttribute="centerY" secondItem="bQB-MD-HfJ" secondAttribute="centerY" id="lGq-HU-mtA"/>
-                            <constraint firstItem="c0C-uX-zIm" firstAttribute="top" secondItem="wgN-9H-YIf" secondAttribute="bottom" constant="29" id="sXF-PR-M9A"/>
-                            <constraint firstItem="c0C-uX-zIm" firstAttribute="leading" secondItem="MhT-na-a4Z" secondAttribute="leading" id="tte-Lz-bKa"/>
-                            <constraint firstItem="wgN-9H-YIf" firstAttribute="leading" secondItem="wMy-gt-5e6" secondAttribute="leading" id="uPg-gW-r8d"/>
+                            <constraint firstItem="Ze6-9c-SCr" firstAttribute="top" secondItem="wgN-9H-YIf" secondAttribute="bottom" constant="13" id="2PX-1a-FVK"/>
+                            <constraint firstItem="c0C-uX-zIm" firstAttribute="centerX" secondItem="wgN-9H-YIf" secondAttribute="centerX" id="6ND-Gg-G9X"/>
+                            <constraint firstItem="wMy-gt-5e6" firstAttribute="centerX" secondItem="Z51-S5-9GZ" secondAttribute="centerX" id="7mG-Wj-rgm"/>
+                            <constraint firstItem="oo4-DL-Xme" firstAttribute="top" secondItem="c0C-uX-zIm" secondAttribute="bottom" constant="283" id="Igd-pg-bxc"/>
+                            <constraint firstItem="wgN-9H-YIf" firstAttribute="top" secondItem="wMy-gt-5e6" secondAttribute="bottom" constant="30" id="JUO-qM-ghT"/>
+                            <constraint firstItem="c0C-uX-zIm" firstAttribute="leading" secondItem="Z51-S5-9GZ" secondAttribute="leadingMargin" constant="80" id="R14-Mr-fgs"/>
+                            <constraint firstItem="QNH-9U-KNW" firstAttribute="top" secondItem="wgN-9H-YIf" secondAttribute="bottom" constant="18" id="ZOL-zd-5Ir"/>
+                            <constraint firstItem="wMy-gt-5e6" firstAttribute="top" secondItem="vU0-tH-7TT" secondAttribute="bottom" constant="60" id="g39-nc-Nit"/>
+                            <constraint firstItem="Ze6-9c-SCr" firstAttribute="leading" secondItem="wgN-9H-YIf" secondAttribute="leading" constant="30" id="hCY-yB-jh0"/>
+                            <constraint firstItem="QNH-9U-KNW" firstAttribute="leading" secondItem="Ze6-9c-SCr" secondAttribute="trailing" constant="18" id="mqi-tQ-UZc"/>
+                            <constraint firstItem="wgN-9H-YIf" firstAttribute="centerX" secondItem="Z51-S5-9GZ" secondAttribute="centerX" id="yfB-m8-ck5"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -202,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3L-qQ-esw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="103"/>
+            <point key="canvasLocation" x="1816.8" y="102.99850074962519"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wj4-9T-QWv">

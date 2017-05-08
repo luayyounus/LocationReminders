@@ -12,6 +12,7 @@
 
 @interface LocationPresetsViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(strong,nonatomic) NSMutableArray *allBookmarks;
 
 @end
 
@@ -22,26 +23,44 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    _allBookmarks = [[NSMutableArray alloc]init];
+    
+    CLLocation *location1 = [[CLLocation alloc]initWithLatitude:47.6201451 longitude:-122.3298646];
+    LocationBookmarks *newBookmark1 = [[LocationBookmarks alloc]initBookmarkLocationWithName:@"Location 1" andLocation:location1];
+    CLLocation *location2 = [[CLLocation alloc]initWithLatitude:47.6201451 longitude:-122.3298646];
+    LocationBookmarks *newBookmark2 = [[LocationBookmarks alloc]initBookmarkLocationWithName:@"Location 2" andLocation:location2];
+    
+    [self.allBookmarks addObject:newBookmark1];
+    [self.allBookmarks addObject:newBookmark2];
+    NSLog(@"Bookmarks: %@",self.allBookmarks);
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [[[LocationController shared]allLocations]count];
+    if (!_allBookmarks){
+        return 0;
+    }
+    return self.allBookmarks.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
-    }
     
-//    CLLocation *location = [[[LocationController shared]allLocations] objectAtIndex:indexPath.row];
-//    cell.textLabel.text = location.
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    LocationBookmarks* bookmark = [self.allBookmarks objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = bookmark.name;
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [self performSegueWithIdentifier:SOME IDENTIFIER sender:nil];
+    
 }
+
+- (IBAction)closeBookmarksTable:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end

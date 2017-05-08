@@ -59,7 +59,6 @@
     [self fetchQuery];
 }
 
-
 -(void)reminderSavedToParse:(id)sender{
     NSLog(@"Do some stuff since our new reminder was saved!");
 }
@@ -160,10 +159,10 @@
     [self randomPinColor:annotationView];
     
     UIButton *rightCalloutAccessory = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    UIButton *leftCalloutAccessory = [UIButton buttonWithType:UIButtonTypeContactAdd];
+//    UIButton *leftCalloutAccessory = [UIButton buttonWithType:UIButtonTypeContactAdd];
     
     annotationView.rightCalloutAccessoryView = rightCalloutAccessory;
-    annotationView.leftCalloutAccessoryView = leftCalloutAccessory;
+//    annotationView.leftCalloutAccessoryView = leftCalloutAccessory;
     
     
     return annotationView;
@@ -171,7 +170,6 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     [self performSegueWithIdentifier:@"AddReminderViewController" sender:view];
-
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
@@ -190,14 +188,6 @@
     [self.mapView setRegion:region animated:YES];
 }
 
-
--(void)bookmarkingTheLocation:(CLLocation *)location{
-    if (!_bookmarkedLocations){
-        _bookmarkedLocations = [[NSMutableArray alloc]init];
-        
-    }
-
-}
 
 #pragma mark - Random Color for Pin
 -(void)randomPinColor:(MKPinAnnotationView *)annotationView{

@@ -23,6 +23,7 @@
 		01365B431EB9AF890089154B /* LocationPresetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01365B421EB9AF890089154B /* LocationPresetsViewController.m */; };
 		017D763D1EBA467B006B7F48 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 017D763C1EBA467B006B7F48 /* Reminder.m */; };
 		017D763F1EBA5E71006B7F48 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017D763E1EBA5E71006B7F48 /* ParseUI.framework */; };
+		01A361561EBFDF7C00D9C585 /* LocationBookmarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A361551EBFDF7C00D9C585 /* LocationBookmarks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +63,8 @@
 		017D763B1EBA467B006B7F48 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
 		017D763C1EBA467B006B7F48 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		017D763E1EBA5E71006B7F48 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		01A361541EBFDF7C00D9C585 /* LocationBookmarks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBookmarks.h; sourceTree = "<group>"; };
+		01A361551EBFDF7C00D9C585 /* LocationBookmarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBookmarks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 			children = (
 				011041F61EB942BD00F241A7 /* LocationController.h */,
 				011041F71EB942BD00F241A7 /* LocationController.m */,
+				01A361541EBFDF7C00D9C585 /* LocationBookmarks.h */,
+				01A361551EBFDF7C00D9C585 /* LocationBookmarks.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A361561EBFDF7C00D9C585 /* LocationBookmarks.m in Sources */,
 				011041F81EB942BD00F241A7 /* LocationController.m in Sources */,
 				0129F4391EB8FF00001EC43B /* AddReminderViewController.m in Sources */,
 				010DEFC61EB7AC2300B78F94 /* HomeViewController.m in Sources */,

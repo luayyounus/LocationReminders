@@ -15,7 +15,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,7 +32,7 @@
                                 </connections>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="f9q-uE-a0L" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="ZFJ-Ja-rcU"/>
                             <constraint firstItem="f9q-uE-a0L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fsL-CT-SHy"/>
@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" id="NpA-aG-7cy">
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Oho-Nw-1dg">
                             <connections>
-                                <segue destination="zqd-Ur-b3B" kind="presentation" id="945-06-ZEx"/>
+                                <segue destination="zqd-Ur-b3B" kind="presentation" id="tzG-Wd-a2Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -64,12 +64,12 @@
         <!--Location Presets View Controller-->
         <scene sceneID="mJY-7o-wdG">
             <objects>
-                <viewController id="zqd-Ur-b3B" customClass="LocationPresetsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationPresetsViewController" modalPresentationStyle="overCurrentContext" id="zqd-Ur-b3B" customClass="LocationPresetsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9s3-uJ-Xfv"/>
                         <viewControllerLayoutGuide type="bottom" id="3HS-Zf-c2o"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lis-yV-cpE">
+                    <view key="view" alpha="0.90000000000000002" contentMode="scaleToFill" id="lis-yV-cpE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -103,7 +103,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5OM-LN-zOn" secondAttribute="trailing" id="0Q4-HV-VQ2"/>
                             <constraint firstItem="3HS-Zf-c2o" firstAttribute="top" secondItem="5OM-LN-zOn" secondAttribute="bottom" id="HPe-sV-1JC"/>

@@ -34,6 +34,9 @@
     [self.allBookmarks addObject:newBookmark1];
     [self.allBookmarks addObject:newBookmark2];
     NSLog(@"Bookmarks: %@",self.allBookmarks);
+    
+    self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

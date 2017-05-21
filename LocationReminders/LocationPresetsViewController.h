@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationBookmarks.h"
+
 
 @interface LocationPresetsViewController : UIViewController
 

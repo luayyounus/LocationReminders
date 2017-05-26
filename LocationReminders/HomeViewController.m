@@ -189,9 +189,23 @@
 }
 
 - (IBAction)mapZoomInPressed:(UIButton *)sender {
+    MKCoordinateSpan span;
+    span.latitudeDelta = self.mapView.region.span.latitudeDelta/2;
+    span.longitudeDelta = self.mapView.region.span.longitudeDelta/2;
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = self.mapView.region.center;
+    [self.mapView setRegion:region animated:YES];
 }
 
 - (IBAction)mapZoomOutPressed:(UIButton *)sender {
+    MKCoordinateSpan span;
+    span.latitudeDelta = self.mapView.region.span.latitudeDelta * 2;
+    span.longitudeDelta = self.mapView.region.span.longitudeDelta * 2;
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = self.mapView.region.center;
+    [self.mapView setRegion:region animated:YES];
 }
 
 #pragma mark - Random Color for Pin

@@ -30,13 +30,31 @@
                                     <outletCollection property="gestureRecognizers" destination="ygL-ha-wc3" appends="YES" id="0C5-v1-toA"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxu-7n-fWt">
+                                <rect key="frame" x="297" y="580" width="62" height="30"/>
+                                <state key="normal" title="Zoomout"/>
+                                <connections>
+                                    <action selector="mapZoomOutPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WxV-Xe-oaf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyJ-AN-yJc">
+                                <rect key="frame" x="307" y="542" width="52" height="30"/>
+                                <state key="normal" title="ZoomIn"/>
+                                <connections>
+                                    <action selector="mapZoomInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KPp-aL-hXg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Oxu-7n-fWt" firstAttribute="trailing" secondItem="f9q-uE-a0L" secondAttribute="trailing" constant="-16" id="BPX-TH-9rT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f9q-uE-a0L" secondAttribute="bottom" constant="40" id="FzI-y1-MdH"/>
+                            <constraint firstItem="Oxu-7n-fWt" firstAttribute="bottom" secondItem="f9q-uE-a0L" secondAttribute="bottom" constant="-17" id="LEw-sR-ZzC"/>
                             <constraint firstItem="f9q-uE-a0L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ae8-ny-KEb"/>
                             <constraint firstItem="f9q-uE-a0L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c4B-WC-jF0"/>
                             <constraint firstAttribute="trailing" secondItem="f9q-uE-a0L" secondAttribute="trailing" id="dpL-9F-2SA"/>
+                            <constraint firstItem="Oxu-7n-fWt" firstAttribute="top" secondItem="pyJ-AN-yJc" secondAttribute="bottom" constant="8" id="kPe-0o-uFW"/>
+                            <constraint firstItem="pyJ-AN-yJc" firstAttribute="trailing" secondItem="f9q-uE-a0L" secondAttribute="trailing" constant="-16" id="opE-TJ-yXG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NpA-aG-7cy">

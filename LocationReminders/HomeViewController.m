@@ -188,6 +188,11 @@
     [self.mapView setRegion:region animated:YES];
 }
 
+- (IBAction)mapZoomInPressed:(UIButton *)sender {
+}
+
+- (IBAction)mapZoomOutPressed:(UIButton *)sender {
+}
 
 #pragma mark - Random Color for Pin
 -(void)randomPinColor:(MKPinAnnotationView *)annotationView{
